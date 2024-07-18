@@ -1,0 +1,150 @@
+$teal: #0891b2;
+$grey: #565656;
+
+@mixin card {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+body {
+  background-color: #eee;
+}
+
+main,
+.footer-text {
+  padding: 22px 18px;
+}
+
+main {
+  padding-bottom: 0;
+
+  p {
+    color: $grey;
+  }
+}
+
+.profile {
+  background: url("./assets/img/profile.jpg") center / cover;
+  min-height: 425px;
+  position: relative;
+  margin: auto 10px 32px;
+  @include card;
+}
+
+.profile {
+  color: #fff;
+}
+
+h1 {
+  position: absolute;
+  bottom: 0;
+  font-size: 2.83rem;
+  padding: 7px 11px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+
+  img {
+    width: 30px;
+  }
+
+  &.large img {
+    width: 40px;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.projects {
+  padding: 150px 0;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.project-card {
+  @include card;
+}
+
+.project-image-frame,
+.footer-image-frame {
+  max-width: 100%;
+
+  img {
+    display: block;
+    max-width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+  }
+}
+
+.project-details {
+  padding: 16px;
+  min-height: 200px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  a:first-child {
+    margin-right: 15px;
+  }
+
+  img {
+    width: 20px;
+  }
+}
+
+footer {
+  background: $teal;
+}
+
+.footer-text {
+  padding-bottom: 72px;
+}
+
+.contact-text {
+  margin-bottom: 32px;
+
+  > * {
+    margin-bottom: 32px;
+  }
+}
+
+.footer-image-frame img {
+  min-height: 420px;
+}
