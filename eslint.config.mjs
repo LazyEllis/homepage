@@ -24,12 +24,6 @@ export default [
   },
   ...compat.extends("airbnb-base"),
   {
-    files: ["test/**/*"],
-    languageOptions: {
-      globals: globals.jest,
-    },
-  },
-  {
     rules: {
       "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
       "no-underscore-dangle": ["error", { allow: ["__filename", "__dirname"] }],
