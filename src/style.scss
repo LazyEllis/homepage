@@ -10,7 +10,7 @@ $grey: #565656;
 }
 
 :root {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 html,
@@ -33,13 +33,9 @@ header,
   padding: 22px 18px;
 }
 
-main,
-header {
-  padding-bottom: 0 !important;
-}
-
 header {
   position: relative;
+  padding-bottom: 0 !important;
 
   &::before {
     content: "";
@@ -52,7 +48,8 @@ header {
 }
 
 main {
-  padding-top: 0 !important;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   p {
     color: $grey;
@@ -101,10 +98,6 @@ h2 {
   margin-bottom: 12px;
 }
 
-.projects {
-  padding: 150px 0;
-}
-
 .project-list {
   display: flex;
   flex-direction: column;
@@ -121,7 +114,7 @@ h2 {
 
   img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     min-height: 250px;
     object-fit: cover;
   }
@@ -158,8 +151,8 @@ footer {
   margin-bottom: 32px;
 }
 
-.footer-image-frame img {
-  min-height: 420px;
+.footer-image-frame {
+  max-width: 520px;
 }
 
 @media (min-width: 768px) {
@@ -205,8 +198,12 @@ footer {
     }
   }
 
+  main {
+    padding-top: 60px 32px;
+  }
+
   .projects {
-    padding: 150px 46px 150px;
+    padding: 0 46px 0;
   }
 
   .project-list {
@@ -219,10 +216,7 @@ footer {
   footer {
     display: flex;
     gap: 32px;
-
-    & > div {
-      flex: 1;
-    }
+    justify-content: space-between;
   }
 
   .footer-text {
@@ -233,6 +227,73 @@ footer {
   }
 
   .links {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    display: flex;
+    padding: 40px 60px 0;
+
+    &::before {
+      background: linear-gradient(160deg, $teal 70%, #fff 30%);
+    }
+  }
+
+  .about,
+  .profile {
+    margin: 0;
+    flex: 1;
+  }
+
+  .profile {
+    float: none;
+    align-items: flex-end;
+    max-width: 400px;
+
+    h1 {
+      position: static;
+      color: #fff;
+    }
+  }
+
+  .about {
+    margin: 42px 0;
+    padding: 25px 35px;
+
+    & > * {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    .links {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0;
+    }
+  }
+
+  main {
+    padding: 80px 60px;
+
+    .projects {
+      padding: 0;
+    }
+  }
+
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  .footer-text {
     justify-content: flex-start;
   }
 }
