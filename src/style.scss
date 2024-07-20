@@ -22,17 +22,37 @@ p {
   margin: 0;
 }
 
-body {
-  background-color: #eee;
+body,
+.about {
+  background-color: #fff;
 }
 
 main,
+header,
 .footer-text {
   padding: 22px 18px;
 }
 
+main,
+header {
+  padding-bottom: 0 !important;
+}
+
+header {
+  position: relative;
+
+  &::before {
+    content: "";
+    background: linear-gradient(150deg, $teal 50%, #fff 50%);
+    position: absolute;
+    inset: 0;
+    bottom: 200px;
+    z-index: -1;
+  }
+}
+
 main {
-  padding-bottom: 0;
+  padding-top: 0 !important;
 
   p {
     color: $grey;
@@ -42,7 +62,8 @@ main {
 .profile {
   background: url("./assets/img/profile.jpg") center / cover;
   min-height: 425px;
-  position: relative;
+  display: flex;
+  align-items: flex-end;
   margin: auto 10px 32px;
   @include card;
 }
@@ -52,8 +73,6 @@ main {
 }
 
 h1 {
-  position: absolute;
-  bottom: 0;
   font-size: 2.83rem;
   padding: 7px 11px;
 }
@@ -78,10 +97,8 @@ h2 {
   }
 }
 
-.about {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.about > * {
+  margin-bottom: 12px;
 }
 
 .projects {
@@ -137,14 +154,85 @@ footer {
   padding-bottom: 72px;
 }
 
-.contact-text {
+.contact-text > * {
   margin-bottom: 32px;
-
-  > * {
-    margin-bottom: 32px;
-  }
 }
 
 .footer-image-frame img {
   min-height: 420px;
+}
+
+@media (min-width: 768px) {
+  main,
+  header,
+  footer {
+    padding: 40px 32px;
+  }
+
+  header::before {
+    bottom: 0;
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  .profile {
+    float: left;
+    max-width: 350px;
+    margin: 0px 18px 18px 0;
+    align-items: flex-start;
+
+    h1 {
+      position: relative;
+      left: 350px;
+      color: #000;
+    }
+  }
+
+  .about {
+    @include card;
+    padding: 80px 20px;
+    margin: auto 46px;
+    margin-top: 144px;
+
+    h2 {
+      text-align: center;
+    }
+
+    .links {
+      display: none;
+    }
+  }
+
+  .projects {
+    padding: 150px 46px 150px;
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 35px;
+    row-gap: 55px;
+  }
+
+  footer {
+    display: flex;
+    gap: 32px;
+
+    & > div {
+      flex: 1;
+    }
+  }
+
+  .footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .links {
+    justify-content: flex-start;
+  }
 }
