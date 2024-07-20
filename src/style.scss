@@ -5,6 +5,24 @@ $grey: #565656;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+@font-face {
+  font-family: "Playfair Display";
+  src:
+    url("./assets/font/playfairdisplay-regular-webfont.woff2") format("woff2"),
+    url("./assets/font/playfairdisplay-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("./assets/font/roboto-regular-webfont.woff2") format("woff2"),
+    url("./assets/font/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +38,16 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
 }
 
 body,
