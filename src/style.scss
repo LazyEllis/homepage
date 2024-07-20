@@ -171,16 +171,17 @@ footer {
   background: $teal;
 }
 
+.icon {
+  width: 18px;
+  display: none;
+}
+
 .footer-text {
   padding-bottom: 72px;
 }
 
 .contact-text > * {
   margin-bottom: 32px;
-}
-
-.footer-image-frame {
-  max-width: 520px;
 }
 
 @media (min-width: 768px) {
@@ -245,6 +246,15 @@ footer {
     display: flex;
     gap: 32px;
     justify-content: space-between;
+
+    & > div {
+      flex: 1;
+    }
+  }
+
+  .icon {
+    display: inline;
+    margin-right: 10px;
   }
 
   .footer-text {
@@ -252,6 +262,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 0;
+  }
+
+  .footer-image-frame {
+    max-width: 520px;
+
+    img {
+      height: 100%;
+    }
   }
 
   .links {
@@ -323,5 +341,6 @@ footer {
 
   .footer-text {
     justify-content: flex-start;
+    max-width: 520px;
   }
 }
